@@ -1,24 +1,22 @@
-// List variable with choices
-let choices = ["Rock", "Paper", "Scissors"];
-
-// Variable for computer that randomly chooses from choices list
-let computerSelection = choices[Math.floor(Math.random() * choices.length)];
-
-// Variable for human (playerSelection) with prompt
-let playerSelection = upperCaseFirstChar(
-    prompt("Rock, Paper or Scissors?").trim().toLowerCase()
-);
-
 let playerScore = 0;
 let computerScore = 0;
 
-// Function (playRound()) that declares the comparison of the strings (Rock > Scissors, etc.),
-// compares playerSelection with computerSelection, prints the winner and returns it
+// Play one round of the game and return the winner
 function playRound() {
+    let choices = ["Rock", "Paper", "Scissors"];
+
+    // Make computer select randomly from choices and prompt user for selection
+    let computerSelection = choices[Math.floor(Math.random() * choices.length)];
+    let playerSelection = upperCaseFirstChar(
+        prompt("Rock, Paper or Scissors?").trim().toLowerCase()
+    );
+
+    // Declare the comparison between the strings
     "Rock" > "Scissors";
     "Rock" < "Paper";
     "Paper" < "Scissors";
 
+    // Compare playerSelection with computerSelection, print winner and return it
     if (
         playerSelection === "Rock" ||
         playerSelection === "Paper" ||
@@ -44,11 +42,32 @@ function playRound() {
     }
 }
 
+// Upper case only the first character in string
 function upperCaseFirstChar(s) {
     return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
-playRound();
+// Play the game for five rounds and at the end declare the winner
+function game() {
+    for (let i = 0; i < 5; i++) {
+        playRound();
+    }
+    if (playerScore > computerScore) {
+        console.log("Game won!");
+        console.log(
+            `Match score is: [ Player: ${playerScore} | Computer: ${computerScore} ]`
+        );
+    } else if (playerScore < computerScore) {
+        console.log("Game lost!");
+        console.log(
+            `Match score is: [ Player: ${playerScore} | Computer: ${computerScore} ]`
+        );
+    } else {
+        console.log("The game ended in a draw!");
+        console.log(
+            `Match score is: [ Player: ${playerScore} | Computer: ${computerScore} ]`
+        );
+    }
+}
 
-console.log(`The score is Player: ${playerScore} | Computer: ${computerScore}`);
-// TODO: Function (game()) that replays the game for 5 times (recalls playRound() for 5 times)
+game();
