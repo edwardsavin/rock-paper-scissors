@@ -3,7 +3,7 @@ let computerScore = 0;
 
 // Play one round of the game and return the winner
 function playRound() {
-    let choices = ["Rock", "Paper", "Scissors"];
+    const choices = ["Rock", "Paper", "Scissors"];
 
     // Make computer select randomly from choices and prompt user for selection
     let computerSelection = choices[Math.floor(Math.random() * choices.length)];
