@@ -39,12 +39,25 @@ body {
   width: 20vh;
 }
 
+.text {
+  filter: blur(0.48px);
+}
+
+#round-result,
+#match-score {
+  margin: 5px;
+}
+
 #space {
+  display: flex;
   height: 72.5vh;
+  align-items: center;
 }
 
 #game-winner {
-  height: 2vh;
+  font-size: xx-large;
+  text-shadow: 0 0 8px rgb(36, 36, 36), 0 0 8px rgb(36, 36, 36),
+    0 0 8px rgb(36, 36, 36), 0 0 8px rgb(36, 36, 36);
 }
 
 #rock,
@@ -60,6 +73,7 @@ body {
   background-image: url(https://pbs.twimg.com/media/D8Kygw6XYAEeEg8.png);
   background-size: 56%;
   background-position-y: bottom;
+  filter: blur(0.42px);
 }
 
 #paper {

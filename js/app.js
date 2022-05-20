@@ -62,8 +62,10 @@ function playRound(buttonSelected) {
 
 function announceWinner() {
   if (playerScore === 5) {
+    gameResult.style.color = "rgba(3, 173, 3, 0.884)";
     gameResult.textContent = "You won the game!";
   } else if (computerScore === 5) {
+    gameResult.style.color = "rgba(219, 20, 6, 0.884)";
     gameResult.textContent = "You lost the game!";
   }
 }
